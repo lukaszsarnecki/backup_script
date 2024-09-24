@@ -6,11 +6,18 @@ Here are the backup creation and restoration scripts in English, designed for Li
 ```bash
 #!/bin/bash
 
-# Paths
-SRC_DIR="/path/to/source/folder"  # Source directory to back up
+# Backup configuration
 BACKUP_DIR="/path/to/backup/folder"  # Destination directory for backups
 DATE=$(date +%Y-%m-%d_%H-%M-%S)
 BACKUP_FILE="$BACKUP_DIR/backup_$DATE.tar.gz"
+
+# List of files and directories to back up
+FILES_TO_BACKUP=(
+    "/path/to/file1"
+    "/path/to/directory1"
+    "/path/to/file2"
+    "/path/to/directory2"
+)
 
 # Check if the backup directory exists
 if [ ! -d "$BACKUP_DIR" ]; then
@@ -18,7 +25,7 @@ if [ ! -d "$BACKUP_DIR" ]; then
 fi
 
 # Create the backup
-tar -czf "$BACKUP_FILE" "$SRC_DIR"
+tar -czf "$BACKUP_FILE" "${FILES_TO_BACKUP[@]}"
 
 # Check if the backup was successful
 if [ $? -eq 0 ]; then
@@ -33,7 +40,7 @@ fi
 ```bash
 #!/bin/bash
 
-# Paths
+# Backup restoration configuration
 BACKUP_FILE="/path/to/backup/backup.tar.gz"  # Path to the backup file
 RESTORE_DIR="/path/to/restore/folder"  # Destination directory for restoration
 
