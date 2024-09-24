@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Paths
+# Backup restoration configuration
 BACKUP_FILE="/path/to/backup/backup.tar.gz"  # Path to the backup file
 RESTORE_DIR="/path/to/restore/folder"  # Destination directory for restoration
 
