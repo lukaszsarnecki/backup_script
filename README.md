@@ -52,5 +52,5 @@ fi
 
 ## Script Explanation:
 
-1. Settings:
+### 1. Settings:
 - BACKUP_DIR: The directory where backups will be stored.
